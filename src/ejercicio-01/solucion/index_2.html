@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+        <h1>Todo List</h1>
+        <ul id="lista-tareas">
+
+        </ul>
+
+        <div>
+            <input type="text" placeholder="Añade una tarea" id="input-tarea" />
+            <button id="boton-añadir-tarea">Añadir Tarea</button>
+        </div>
+    </main>
+
+    <script>
+        function añadirTarea() {
+            const inputTarea = document.getElementById('input-tarea')
+            const textoTarea = inputTarea.value
+            const ListaTareas = document.getElementById('input-tarea')
+
+            const nuevoElementoLista = document.createElement('li')
+            nuevoElementoLista.innerHTML = `
+            <span>${textoTarea}</span>
+            <button onclick="borrarTarea(this)">Eliminar</button>
+            `
+
+
+            listaTareas.appendChild(nuevoElementoLista)
+            inputTarea.value = ''
+        }
+
+        function borrarTarea() {
+            const listaTareas = document.getElementById('lista-tareas')
+            const elementoLista = event.target.parentElement
+            listaTareas.removeChild(elementoLista)
+        }
+
+        document.getElementById('boton-añadir-tarea').addEvenListener('click', añadirTarea)
+    
+    </script>
+  </body>
+</html>
+
+

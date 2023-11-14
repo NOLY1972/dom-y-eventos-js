@@ -6,10 +6,40 @@
     <title>Ejercicio 1: Selección de Elementos por ID</title>
   </head>
   <body>
-    <!-- Escribe tu codigo html aqui -->
+    <section>
+      <h2>Lista de la compra</h2>
+      <ul id="Lista-compra"></ul>
+    </section>
+
+    <input type="text" id="input-lista" />
+
+    <button id="boton-formulario">Añadir a la lista de la compra</button>
 
     <script>
-      // Escribe tu codigo javascript aqui
+      const botonFormulario = document.getElementById('boton-formulario')
+
+      botonFormulario.addEventListener('click', (event) => {
+        const ListaCompra = document.getElementById('lista-compra')
+        const inputLista = document.getElementById('input-lista')
+
+        const elementoLista = document.createElement('li')
+        const botonElemento = document.createElement('button')
+        botonElemento.textContent = 'Eliminar'
+        botonElemento.addEventListener('click', (event) => {
+          const elementoLista = event.target.parentElement
+          listaCompra,removeChild(elementoLista)
+        })
+
+        elementoLista.textContent = inputLista.value
+        elementoLista.appendChild(botonElemento)
+
+        ListaCompra.appendChild(elementoLista)
+
+      inputLista.value = ''
+      })
+
+
+
     </script>
   </body>
 </html>
